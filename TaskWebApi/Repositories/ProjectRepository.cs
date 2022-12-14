@@ -14,11 +14,6 @@ namespace TaskWebApi.Repositories
             this.context = context;
         }
 
-        public string Information(Project project)
-        {
-            return $"Name: {project.Name}\n Project start date: {project.StartDate}\n Project end date: {project.EndDate}\n Priority: {project.Priority}\n Status: {project.Status}";
-        }
-
         public bool Create(ProjectRequest request)
         {
             try

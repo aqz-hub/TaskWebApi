@@ -15,26 +15,24 @@ namespace TaskWebApi.Controllers
             this.task = task;
         }
 
-        [HttpGet, Route("get/information/{id}")]
-        public string GetInformation(long id)
+        [HttpGet, Route("get/{id}")]
+        public Models.Task Get(long id)
         {
-            var _task = task.Get(id);
-
-            return task.Information(_task);
+            return task.Get(id);
         }
 
         [HttpPut, Route("create")]
-        public void CreateTask(TaskRequest request)
+        public void Create(TaskRequest request)
         {
             task.Create(request);
         }
         [HttpPost, Route("update/{id}")]
-        public void UpdateTask(long id, TaskRequest request)
+        public void Update(long id, TaskRequest request)
         {
             task.Update(id, request);
         }
         [HttpDelete, Route("delete/{id}")]
-        public void DeleteTask(long id)
+        public void Delete(long id)
         {
             task.Delete(id);
         }

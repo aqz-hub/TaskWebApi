@@ -17,16 +17,6 @@ namespace TaskWebApi.Repositories
             this.context = context;
         }
 
-        public string Information(Models.Task task)
-        {
-            string info = $"Name: {task.Name}\n Description: {task.Description}\n Priority: {task.Priority}\n Status: {task.Status}\n";
-            if(task.Project != null)
-            {
-                info += $"Project: {task.Project.Name}\n";
-            }
-            return info;
-        }
-
         public bool Create(TaskRequest request)
         {
             try
